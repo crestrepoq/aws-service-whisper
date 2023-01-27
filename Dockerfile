@@ -8,11 +8,6 @@ RUN cd /usr/local/bin && \
     rm -f *.tar.xz && \
     mv ffmpeg-git-*-amd64-static/ffmpeg .
 
-# RUN wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
-# RUN wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz.md5
-# RUN md5sum -c ffmpeg-release-amd64-static.tar.xz.md5
-# RUN tar xvf ffmpeg-release-amd64-static.tar.xz
-
 FROM public.ecr.aws/lambda/python:3.9
 
 COPY --from=ffmpeg-builder /usr/local/bin/ffmpeg/ffmpeg /usr/local/bin/ffmpeg/ffmpeg
