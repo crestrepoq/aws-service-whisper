@@ -16,6 +16,6 @@ RUN ln -s /usr/local/bin/ffmpeg/ffmpeg /usr/bin/ffmpeg
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 COPY app.py .
-COPY test_french_audio.mp4 .
+# COPY test_french_audio.mp4 .
 
 cmd [ "app.handler" ]
